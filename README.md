@@ -1,5 +1,5 @@
 # Implementation of piecewise lineear regression 
-This repository shows my ```pytorch``` implementation of fixed-breaks piecewise linear regression. I was doing research in estimating RNA elongation rates, and one essential step in the algorithm the estimation task is to precisely regress the read coverage for a gene. I looked around for different implementations of piecewise linear regression, but I could not find any that specifically fits my use case (where the need for precise regression is very crucial, and fast estimation is also important because each data point is a position on the gene, there are many data points). So, I tried to implement it in pytorch, which is the fastest and neatest way that I know for this problem. I share this implementation here mostly for educational purposes for my own learning. If you ever get interested in this implementation and want me to modify (or me to help you modify the code), please reach out.
+This repository shows my ```pytorch``` implementation of fixed-breaks piecewise linear regression. I was doing research in estimating RNA elongation rates, and one essential step in the algorithm the estimation task is to precisely regress the read coverage for a gene. I looked around for different implementations of piecewise linear regression, but I could not find any that specifically fits my use case (where the need for precise regression is very crucial, and fast estimation is also important because each data point is a position on the gene, there are many data points). So, I tried to implement it in ```pytorch```, which is the fastest and neatest way that I know for this problem. I share this implementation here mostly for educational purposes for my own learning. If you ever get interested in this implementation and want me to modify (or me to help you modify the code), please reach out.
 
 # Example data:
 As mentioned above, the use case is to regress the read coverage given genomic positions. Details:
@@ -25,7 +25,7 @@ Results
 
 There are many functionality of the object fxlr_model, such as plotting the regression line, getting the breakpoints, x_to_y, y_to_x, etc. The inferences of x_to_y and y_to_x are such that any lines on an approximate horizontal lines are not allowed and hence declared as nan. This is very useful for my application because we will eventually try to estimate the horizontal distance between two regression lines corresponding to two time points. 
 
-2, Use a learned number of breakpoints. This implementation is done using numpy and scipy, very slow, and I do not have plans to transfer it to pytorch unless requested. It is implemented in ```regression/piecewise_linear_regression.py```. Here is how to use it: 
+2, Use a learned number of breakpoints. This implementation is done using numpy and scipy, very slow, and I do not have plans to transfer it to ```pytorch``` unless requested. It is implemented in ```regression/piecewise_linear_regression.py```. Here is how to use it: 
 ```
 pwlr_model = pwlr.PiecewiseLinearRegression()
 pwlr_model.fit(X, Y)
@@ -46,6 +46,6 @@ Here are the packages that I used in this implementation. I do not have time to 
 ```
 
 # Conclusion:
-This is my attempt at learning about how to do optimization using pytorch for a particular application very specific to my current research in RNA elongation rate estimation. I have used many different packages for this particular problem, but I found pytorch to be fastest and most accurate. If you ever find yourself in stuations where you want joint-breakpoint piecewise linear regression, maybe this repository can help you, and if there are features you like implemented, please let me know. 
+This is my attempt at learning about how to do optimization using ```pytorch``` for a particular application very specific to my current research in RNA elongation rate estimation. I have used many different packages for this particular problem, but I found ```pytorch``` to be fastest and most accurate. If you ever find yourself in stuations where you want joint-breakpoint piecewise linear regression, maybe this repository can help you, and if there are features you like implemented, please let me know. 
 ```
 
