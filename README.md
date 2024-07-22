@@ -7,7 +7,7 @@ As mentioned above, the use case is to regress the read coverage given genomic p
 - Expected output: a list of breakpoints (px, py) of the piece-wise regression line. The data is such that we would most likely expect a decreasing regression line. We also want the most precise regression line (low-noise data).
 
 Example data is provided in ```data/coverage_df.csv.gz```, and visualized here: 
-![example data](data/coverage_df.png)
+![example data](data/coverage.png)
 Each color represents the read coverage at different time points during the experiment. The data is such that we would most likely expect a decreasing regression line.
 
 # Regression procedure:
