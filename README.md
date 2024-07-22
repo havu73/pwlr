@@ -1,5 +1,5 @@
 # Implementation of piecewise lineear regression 
-This repository shows my pytorch implementation of fixed-breaks piecewise linear regression. I was doing research in estimating RNA elongation rates, and one essential step in the algorithm the estimation task is to precisely regress the read coverage for a gene. I looked around for different implementations of piecewise linear regression, but I could not find any that specifically fits my use case (where the need for precise regression is very crucial, and fast estimation is also important because each data point is a position on the gene, there are many data points). So, I tried to implement it in pytorch, which is the fastest and neatest way that I know for this problem. I share this implementation here mostly for educational purposes for my own learning. If you ever get interested in this implementation and want me to modify (or me to help you modify the code), please reach out.
+This repository shows my ```pytorch``` implementation of fixed-breaks piecewise linear regression. I was doing research in estimating RNA elongation rates, and one essential step in the algorithm the estimation task is to precisely regress the read coverage for a gene. I looked around for different implementations of piecewise linear regression, but I could not find any that specifically fits my use case (where the need for precise regression is very crucial, and fast estimation is also important because each data point is a position on the gene, there are many data points). So, I tried to implement it in pytorch, which is the fastest and neatest way that I know for this problem. I share this implementation here mostly for educational purposes for my own learning. If you ever get interested in this implementation and want me to modify (or me to help you modify the code), please reach out.
 
 # Example data:
 As mentioned above, the use case is to regress the read coverage given genomic positions. Details:
@@ -34,6 +34,18 @@ Results:
 ![example regression line of pwlr](data/pwlr.png)
 There are, again, many functionalities of the object pwlr_model, such as plotting the regression line, getting the breakpoints, x_to_y, y_to_x, etc. I do not have time yet to write down all documentation, but I will do it attracts interest.
 
+# Installation:
+Here are the packages that I used in this implementation. I do not have time to package this into a pip package, but I will do it if there is interest.
+```
+- numpy
+- scipy
+- torch
+- pandas
+- matplotlib
+- seaborn
+```
+
 # Conclusion:
 This is my attempt at learning about how to do optimization using pytorch for a particular application very specific to my current research in RNA elongation rate estimation. I have used many different packages for this particular problem, but I found pytorch to be fastest and most accurate. If you ever find yourself in stuations where you want joint-breakpoint piecewise linear regression, maybe this repository can help you, and if there are features you like implemented, please let me know. 
 ```
+
